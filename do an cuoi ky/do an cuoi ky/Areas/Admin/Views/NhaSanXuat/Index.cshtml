@@ -1,0 +1,59 @@
+﻿
+@model IEnumerable<do_an_cuoi_ky.Models.MOHINH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 90%;
+        margin:auto;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        
+    }
+    tr:nth-child(even){background-color: #b2b2b2ff}
+    tr:hover {
+        background-color: coral;
+    }
+    th{background-color:#2a9fd6;
+       color:black;
+       font-weight:900;
+    }
+    td{color:black;}
+</style>
+
+
+    <h2>Quản lý Nhà Sản Xuất </h2>
+
+    <p>Move the mouse over the table rows to see the effect.</p>
+
+    <table>
+        <tr>
+            <th>Mã mặt hàng</th>
+            <th>Tên Mặt Hàng</th>
+            <th>Mô tả</th>
+            <th colspan="2">
+            <a><img src="~/Asset/img/AddNSX.png" style="margin-left:25%" /></a
+></th>
+        </tr>
+       
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.MaMH </td>
+                <td> @item.TenMH </td>
+                <td> @item.MoTa </td>
+                <td><img src="~/Asset/img/EditNSX.png"/></td>
+                <td><img src="~/Asset/img/DeleteNSX (2).png"/></td>
+            </tr>
+        }
+    </table>
+
